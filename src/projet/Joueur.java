@@ -20,4 +20,9 @@ public class Joueur {
 	public void perdBateaux(){
 		nbBateauxEnVie--;
 	}
+	
+	@Override
+	public String toString() {
+				return "le nom du joueur est : "+ this.nom ;
+	}
 }
