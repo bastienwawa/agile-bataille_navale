@@ -2,10 +2,10 @@ package projet;
 
 import java.util.ArrayList;
 
-public abstract class Bateau {
+public class Bateau {
 	protected ArrayList<String> coordonnees = new ArrayList<String>();
 	final char[] hori;
-	private final int[] verti;
+	final int[] verti;
 	protected int taille;
 	public int nombre;
 	

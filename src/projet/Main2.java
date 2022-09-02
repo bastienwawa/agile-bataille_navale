@@ -1,7 +1,5 @@
 package projet;
 
-import java.util.Scanner;
-
 public class Main2 {
 
 	public static void main(String[] args) {
@@ -15,7 +13,15 @@ public class Main2 {
 		Plateau plateauJ1 = new Plateau();
 		plateauJ1.affichePlateau();
 		
+		plateauJ1.ajouteBateau();
 		
+		plateauJ1.affichePlateau();
+		plateauJ1.ajouteBateau();
+		plateauJ1.affichePlateau();
+		plateauJ1.ajouteBateau();
+		plateauJ1.affichePlateau();
+		plateauJ1.ajouteBateau();
+		plateauJ1.affichePlateau();
 		
 	}
 	
