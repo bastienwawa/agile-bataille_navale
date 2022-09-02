@@ -19,5 +19,31 @@ En revanche nous avons fait en sorte que le(s) joueur(s) puisse sélectionner so
 ### PDCA
 - Le plus important sera d'améliorer notre organisation et communication, d'être bien clair sur la répartition des tâches afin d'avancer plus vite, périodiquement un ou deux d'entre nous regarder l'avancé générale du projet en regardant tour par tour ce que font le reste de l'équipe.
 
-# Mémo
-Améliorer l'architecture global, créer les bateaux et le plateau
+
+
+_______________________________
+
+
+# Sprint 2
+
+## Démo + Plannification
+
+### Les Accomplis
+- Création d'un Bateau
+-création du plateau
+-choix du nombre de joueurs
+
+### Prévu
+Pour le 3eme sprint nous allons creer une IA qui peux tirer au hasard. 
+Permetre a l'utilisateur de placer ses bateau.
+Permetre a l'utilisateur de tirer.
+
+
+## Rétrospective
+
+### Les Difficultés
+nous avons mal evaluer la difficulté de certaines histoire utilisateur ce qui entraine un retard dans les rendus.
+
+### PDCA
+réévaluer la difficultés  des histoires utilisateurs
+
