@@ -42,16 +42,6 @@ public class Plateau {
 				lettreFind = true;
 			}
 		}
-		Bateau bat = null;
-		if (lettre.equals("a")) {
-			bat = new PorteAvion();
-		} else if (lettre.equals("b")) {
-			bat = new Croiseur();
-		} else if (lettre.equals("c")) {
-			bat = new SousMarins();
-		} else if (lettre.equals("d")) {
-			bat = new Tourpilleur();
-		}
 		String rep = "";
 		boolean rotation = false;
 		while (!rotation) {
@@ -60,6 +50,16 @@ public class Plateau {
 			if(rep.equals("h") || rep.equals("v")) {
 				rotation = true;
 			}
+		}
+		Bateau bat = null;
+		if (lettre.equals("a")) {
+			bat = new Bateau(5);
+		} else if (lettre.equals("b")) {
+			bat = new Bateau(4);
+		} else if (lettre.equals("c")) {
+			bat = new Bateau(3);
+		} else if (lettre.equals("d")) {
+			bat = new Bateau(2);
 		}
 		boolean end = false;
 		while (!end) {
@@ -71,6 +71,8 @@ public class Plateau {
 						int e3 = (int) (e - 97);
 						for (int i = 0; i < bat.taille; i++) {
 							this.plateau[Integer.parseInt(coord.substring(1))][e3 + i] = '■';
+							bat.setCoordonnees(coord, rep.charAt(0));
+//							joueur.addBateau(bat);
 							end = true;
 						}
 					}
@@ -81,6 +83,8 @@ public class Plateau {
 						int e3 = coord.charAt(0)-97;
 						for (int i = 0; i < bat.taille; i++) {
 							this.plateau[Integer.parseInt(coord.substring(1)) + i][e3] = '■';
+							bat.setCoordonnees(coord, rep.charAt(0));
+//							joueur.addBateau(bat);
 							end = true;
 						}
 					}

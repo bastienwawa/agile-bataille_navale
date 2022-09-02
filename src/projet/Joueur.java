@@ -14,6 +14,11 @@ public class Joueur {
 	public String getNom(){
 		return nom;
 	}
+	
+	public void addBateau(Bateau bateau) {
+		this.bateaux.add(bateau);
+	}
+	
 	@Override
 	public String toString() {
 		return "le nom du joueur est : "+ this.nom ;

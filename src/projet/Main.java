@@ -4,14 +4,11 @@ import jdk.incubator.vector.VectorOperators.Test;
 
 public class Main {
 	static SelectionNbJoueur test = new SelectionNbJoueur();
-	static Tourpilleur tourp = new Tourpilleur();
 	static int tour = 0;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Selectionnez le nombre de joueurs  : (tapez 1 ou 2) \n- 1 Joueur \n- 2 Joueurs");
-		System.out.println("La taille du tourpilleur est :"+ tourp.getTaille());
-		System.out.println("La nombre du tourpilleur est :"+tourp.getNombre());
 		boolean partie=false;
 		while(!partie) {
 			test.j2.perdBateaux();
