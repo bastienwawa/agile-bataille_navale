@@ -8,7 +8,7 @@ public class Croiseur extends Bateau{
 	
 	public Croiseur() {
 		super(Croiseur.TAILLE);
-		this.coordonnees=new ArrayList<String>(Arrays.asList(new String[taille]));
+		this.coordonnees=new ArrayList<String>(Arrays.asList(new String[Croiseur.TAILLE]));
 		this.nombre=1;
 	}
 	

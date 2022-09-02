@@ -6,9 +6,9 @@ import java.util.Arrays;
 public class SousMarins extends Bateau {
 	private static final int TAILLE = 3;
 	
-	public SousMarins(int taille, String name){
+	public SousMarins(){
 		super(SousMarins.TAILLE);
-		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[taille]));
+		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[SousMarins.TAILLE]));
 		this.nombre = 2;
 	}
 	

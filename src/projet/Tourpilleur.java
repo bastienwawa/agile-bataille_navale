@@ -11,7 +11,7 @@ public class Tourpilleur extends Bateau {
 	public Tourpilleur() {
 		super(Tourpilleur.TAILLE);
 		// TODO Auto-generated constructor stub
-		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[taille]));
+		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[Tourpilleur.TAILLE]));
 		this.nombre = 1;
 	}
 	
