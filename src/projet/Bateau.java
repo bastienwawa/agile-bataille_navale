@@ -5,12 +5,10 @@ import java.util.ArrayList;
 public abstract class Bateau {
 	protected ArrayList<String> coordonnees = new ArrayList<String>();
 	protected int taille;
-	protected String name;
 	public int nombre;
 	
-	public Bateau(int taille, String name) {
+	public Bateau(int taille) {
 		this.taille = taille;
-		this.name = name;
 	}
 	
 	public void setCoordonnees(ArrayList<String> coordonnees) {
@@ -18,9 +16,6 @@ public abstract class Bateau {
 	}
 	public void setTaille(int taille) {
 		this.taille = taille;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	/**
 	 * @return the coordonnees
@@ -34,12 +29,7 @@ public abstract class Bateau {
 	public int getTaille() {
 		return taille;
 	}
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
+	
 	public int getNombre() {
 		return nombre;
 	}
@@ -48,6 +38,6 @@ public abstract class Bateau {
 	}
 	
 	public String toString() {
-		return "C'est un Bateau - type ";
+		return "C'est un Bateau - type : ";
 	}
 }

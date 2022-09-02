@@ -13,6 +13,9 @@ public class Main {
 		Joueur test = new Joueur(nom);
 		System.out.println(test);
 		
+		Tourpilleur tourp = new Tourpilleur();
+		System.out.println(tourp.getTaille());
+		System.out.println(tourp.getNombre());
 	}
 	
 }

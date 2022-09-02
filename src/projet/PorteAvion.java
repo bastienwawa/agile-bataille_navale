@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PorteAvion extends Bateau{
-
-	public PorteAvion(int taille, String name) {
-		super(taille, name);
+	private static final int TAILLE = 5;
+	
+	public PorteAvion(int taille) {
+		super(PorteAvion.TAILLE);
 		// TODO Auto-generated constructor stub
 		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[taille]));
 		this.nombre = 1;
+	}
+	
+	public int getTaille() {
+		return PorteAvion.TAILLE;
 	}
 	
 	@Override

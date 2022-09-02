@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Tourpilleur extends Bateau {
+	private static final int TAILLE = 2;
 	
-	public Tourpilleur(int taille, String name) {
-		super(taille, name);
+	public int getTaille() {return Tourpilleur.TAILLE;}
+
+	public Tourpilleur() {
+		super(Tourpilleur.TAILLE);
 		// TODO Auto-generated constructor stub
 		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[taille]));
 		this.nombre = 1;

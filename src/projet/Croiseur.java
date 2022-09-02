@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Croiseur extends Bateau{
-	public Croiseur(int taille, String name) {
-		super(taille, name);
+	private static final int TAILLE = 4;
+	
+	public Croiseur() {
+		super(Croiseur.TAILLE);
 		this.coordonnees=new ArrayList<String>(Arrays.asList(new String[taille]));
 		this.nombre=1;
 	}
 	
+	public int getTaille() {
+		return Croiseur.TAILLE;
+	}
+
 	@Override
 	public String toString() {
 		String s = super.toString();
