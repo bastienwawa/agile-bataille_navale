@@ -11,4 +11,10 @@ public class Tourpilleur extends Bateau {
 		this.coordonnees = new ArrayList<String>(Arrays.asList(new String[taille]));
 		this.nombre = 1;
 	}
+	
+	@Override
+	public String toString() {
+		String s = super.toString();
+		return s + "Tourpilleur";
+	}
 }

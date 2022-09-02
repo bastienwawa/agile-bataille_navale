@@ -23,6 +23,6 @@ public class Joueur {
 	
 	@Override
 	public String toString() {
-				return "le nom du joueur est : "+ this.nom ;
+		return "le nom du joueur est : "+ this.nom ;
 	}
 }

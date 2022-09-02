@@ -10,4 +10,9 @@ public class Croiseur extends Bateau{
 		this.nombre=1;
 	}
 	
+	@Override
+	public String toString() {
+		String s = super.toString();
+		return s + "Croiseur";
+	}
 }

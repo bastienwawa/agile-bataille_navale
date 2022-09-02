@@ -11,5 +11,9 @@ public class SousMarins extends Bateau {
 		this.nombre = 2;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String s = super.toString();
+		return s + "SousMarins";
+	}
 }

@@ -2,7 +2,7 @@ package projet;
 
 import java.util.ArrayList;
 
-public class Bateau {
+public abstract class Bateau {
 	protected ArrayList<String> coordonnees = new ArrayList<String>();
 	protected int taille;
 	protected String name;
@@ -12,6 +12,7 @@ public class Bateau {
 		this.taille = taille;
 		this.name = name;
 	}
+	
 	public void setCoordonnees(ArrayList<String> coordonnees) {
 		this.coordonnees = coordonnees;
 	}
@@ -46,4 +47,7 @@ public class Bateau {
 		this.nombre = nombre;
 	}
 	
+	public String toString() {
+		return "C'est un Bateau - type ";
+	}
 }
