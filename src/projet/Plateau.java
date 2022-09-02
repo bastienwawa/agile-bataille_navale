@@ -37,33 +37,37 @@ public class Plateau {
 //	public void ajouteBateau() {
 //		System.out.println("Sélectionait un bateau a placer");
 //		System.out.println("a) ■ ■ ■ ■ ■   b) ■ ■ ■ ■   c) ■ ■ ■   d) ■ ■");
-//		Scanner sc = new Scanner(System.in);
-//		String lettre = sc.nextLine();
-//		sc.close();
+//		String lettre = "";
+//		while(!lettre.equals("a")||!lettre.equals("b")||!lettre.equals("c")||!lettre.equals("d")) {
+//			Scanner sc = new Scanner(System.in);
+//			lettre = sc.nextLine();
+//			sc.close();
+//		}
+//		Bateau bat = null;
 //		if(lettre.equals("a")) {
-//			PorteAvion bat = new PorteAvion();
+//			bat = new PorteAvion();
 //		} else if(lettre.equals("b")) {
-//			Croiseur bat = new Croiseur();
+//			bat = new Croiseur();
 //		} else if(lettre.equals("c")) {
-//			SousMarins bat = new SousMarins();
+//			bat = new SousMarins();
 //		} else if(lettre.equals("d")) {
-//			Tourpilleur bat = new Tourpilleur();
+//			bat = new Tourpilleur();
 //		}
 //		String rep = "";
 //		while(!rep.equals("h") || !rep.equals("v")) {
 //			System.out.println("Bateau à l'horizontale ou vérticale ? (h ou v)");
 //			Scanner sc0 = new Scanner(System.in);
-//			rep = sc.nextLine();
-//			sc.close();
+//			rep = sc0.nextLine();
+//			sc0.close();
 //		}
 //		boolean end = true;
 //		while(end) {
 //			Scanner sc1 = new Scanner(System.in);
-//			String coord = sc.nextLine();
-//			sc.close();
+//			String coord = sc1.nextLine();
+//			sc1.close();
 //			if(rep.equals("h")) {
 //				for(char e: bat.hori) {
-//					
+//					if(e.equals())
 //				}
 //			}
 //		}
