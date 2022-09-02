@@ -1,20 +1,23 @@
 package projet;
 
-import java.util.Scanner;
+import jdk.incubator.vector.VectorOperators.Test;
 
 public class Main {
-
+	static SelectionNbJoueur test = new SelectionNbJoueur();
+	static Tourpilleur tourp = new Tourpilleur();
+	static int tour = 0;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Selectionnez le nombre de joueurs  : (tapez 1 ou 2) \n- 1 Joueur \n- 2 Joueurs");
-		SelectionNbJoueur test = new SelectionNbJoueur();
-		Tourpilleur tourp = new Tourpilleur();
-		System.out.println(tourp.getTaille());
-		System.out.println(tourp.getNombre());
+		System.out.println("La taille du tourpilleur est :"+ tourp.getTaille());
+		System.out.println("La nombre du tourpilleur est :"+tourp.getNombre());
 		boolean partie=false;
 		while(!partie) {
 			test.j2.perdBateaux();
 			System.out.println(test.j2.getNbBateauxEnVie());
+			System.out.println("Tour " + tour++);
+			System.out.println("C'est au tour du joueur :" + tour%2);
 			if(test.j1.getNbBateauxEnVie()==0) {
 				partie=true;
 				System.out.println(test.j2.getNom()+" à gagné");
@@ -27,4 +30,22 @@ public class Main {
 		System.out.println("partie terminé");
 	}
 	
+	public int getRound(int tour) {
+		int round = 0;
+		if(tour%2==0) {
+			round = 1;
+		}else {
+			round = 2;
+		}
+		return round;
+	}
+	public Joueur getPlayer(int round) {
+		Joueur player;
+		if(round == 1) {
+			player = test.j1;
+		}else {
+			player = test.j2;
+		}
+		return player;
+	}
 }
