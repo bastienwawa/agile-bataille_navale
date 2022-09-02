@@ -3,6 +3,8 @@ package projet;
 import java.util.Scanner;
 
 public class SelectionNbJoueur{
+	int nbJoueurs;
+	
 	public SelectionNbJoueur() {
 		boolean jSelection = false;
 		
@@ -26,10 +28,12 @@ public class SelectionNbJoueur{
 		
 		if(nbJoueur.equals("1")) {
 			System.out.println("1 joueur selectionner");
+			this.nbJoueurs = 1;
 		}
 		
 		else if(nbJoueur.equals("2")) {
 			System.out.println("2 joueurs selectionner");
+			this.nbJoueurs = 2;
 		}
 		
 		else {

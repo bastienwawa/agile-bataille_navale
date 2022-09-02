@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class PorteAvion extends Bateau{
 	private static final int TAILLE = 5;
+	private final char[] hori = new char[] {'a','b','c','d','e','f'};
+	private final int[] verti = new int[] {0,1,2,3,4,5};
 	
 	public PorteAvion() {
 		super(PorteAvion.TAILLE);

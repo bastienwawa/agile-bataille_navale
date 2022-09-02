@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class SousMarins extends Bateau {
 	private static final int TAILLE = 3;
+	private final char[] hori = new char[] {'a','b','c','d','e','f','g','h'};
+	private final int[] verti = new int[] {0,1,2,3,4,5,6,7};
 	
 	public SousMarins(){
 		super(SousMarins.TAILLE);

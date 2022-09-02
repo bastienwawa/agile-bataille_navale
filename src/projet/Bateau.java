@@ -14,9 +14,6 @@ public abstract class Bateau {
 	public void setCoordonnees(ArrayList<String> coordonnees) {
 		this.coordonnees = coordonnees;
 	}
-	public void setTaille(int taille) {
-		this.taille = taille;
-	}
 	/**
 	 * @return the coordonnees
 	 */

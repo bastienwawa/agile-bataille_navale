@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class Croiseur extends Bateau{
 	private static final int TAILLE = 4;
+	private final char[] hori = new char[] {'a','b','c','d','e','f','g'};
+	private final int[] verti = new int[] {0,1,2,3,4,5,6};
 	
 	public Croiseur() {
 		super(Croiseur.TAILLE);
