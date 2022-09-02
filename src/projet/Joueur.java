@@ -1,8 +1,11 @@
 package projet;
 
+import java.util.ArrayList;
+
 public class Joueur {
 
 	private String nom;
+	public ArrayList<Bateau> bateaux = new ArrayList<>();
 
 	public Joueur(String nom){
 		this.nom=nom;
