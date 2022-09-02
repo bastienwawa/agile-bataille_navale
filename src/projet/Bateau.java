@@ -4,11 +4,22 @@ import java.util.ArrayList;
 
 public abstract class Bateau {
 	protected ArrayList<String> coordonnees = new ArrayList<String>();
+	final char[] hori;
+	private final int[] verti;
 	protected int taille;
 	public int nombre;
 	
 	public Bateau(int taille) {
 		this.taille = taille;
+		this.hori = new char[11-taille];
+		this.verti = new int[11-taille];
+		for(int i = 0; i < hori.length;i++) {
+			hori[i] = (char)(i+97);
+		}
+		for(int i = 0; i < verti.length;i++) {
+			verti[i] = i;
+		}
+		
 	}
 	
 	public void setCoordonnees(ArrayList<String> coordonnees) {
