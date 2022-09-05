@@ -77,6 +77,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		Util.clearScreen();
+		Util.title();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		joueur = new SelectionNbJoueur();
 		// initialiser la partie et les bateaux
 		Plateau p1 = new Plateau();
@@ -103,8 +108,12 @@ public class Main {
 				if (getRound() == 0) {
 					Util.clearScreen();
 					// Affiche plateau
+					System.out.println("Plateau de " + joueur.j1.getNom());
 					p1.affichePlateau();
+					System.out.println();
+					System.out.println("Plateau de " + joueur.j2.getNom() +" visuel");
 					p2visu.affichePlateau();
+					System.out.println("Au tour de " + joueur.j1.getNom());
 					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
 					entreeJoueur();
 					// Modifie le plateau
@@ -122,11 +131,13 @@ public class Main {
 					tour++;
 				}
 
-				if (tirJ1.aPerdu()) {
+				if (p1.aPerduPlat()) {
+					Util.clearScreen();
 					fin = true;
 					System.out.println("Victoire de l'IA");
 				}
-				if (tirJ2.aPerdu()) {
+				if (p2.aPerduPlat()) {
+					Util.clearScreen();
 					fin = true;
 					System.out.println("Victoire de " + joueur.j1.getNom());
 				}
@@ -135,8 +146,12 @@ public class Main {
 				if (getRound() == 0) {
 					Util.clearScreen();
 					// Affiche plateau
+					System.out.println("Plateau de " + joueur.j1.getNom());
 					p1.affichePlateau();
+					System.out.println();
+					System.out.println("Plateau de " + joueur.j2.getNom() +" visuel");
 					p2visu.affichePlateau();
+					System.out.println("Au tour de " + joueur.j1.getNom());
 					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
 					entreeJoueur();
 					// Modifie le plateau
@@ -146,8 +161,12 @@ public class Main {
 				} else {
 					Util.clearScreen();
 					// Affiche plateau
+					System.out.println("Plateau de " + joueur.j2.getNom());
 					p2.affichePlateau();
+					System.out.println();
+					System.out.println("Plateau de " + joueur.j1.getNom() +" visuel");
 					p1visu.affichePlateau();
+					System.out.println("Au tour de " + joueur.j2.getNom());
 					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
 					entreeJoueur();
 					// Modifie le plateau
@@ -156,11 +175,13 @@ public class Main {
 					tour++;
 				}
 
-				if (tirJ1.aPerdu()) {
+				if (p1.aPerduPlat()) {
+					Util.clearScreen();
 					fin = true;
 					System.out.println("Victoire de " + joueur.j2.getNom());
 				}
-				if (tirJ2.aPerdu()) {
+				if (p2.aPerduPlat()) {
+					Util.clearScreen();
 					fin = true;
 					System.out.println("Victoire de " + joueur.j1.getNom());
 				}

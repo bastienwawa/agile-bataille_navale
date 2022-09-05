@@ -31,20 +31,40 @@ public class Plateau {
 		for (int i = 0; i < taille; i++) {
 			System.out.print(i + " ");
 			for (int j = 0; j < taille; j++) {
-				System.out.print(this.plateau[i][j] + " ");
+				if(this.plateau[i][j] == '■') {
+					System.out.print("\u001B[33m" + this.plateau[i][j] + "\u001B[0m ");
+				}
+				if(this.plateau[i][j] == '□') {
+					System.out.print("\u001B[34m" + this.plateau[i][j] + "\u001B[0m ");
+				}
+				if(this.plateau[i][j] == '◈') {
+					System.out.print("\u001B[31m" + this.plateau[i][j] + "\u001B[0m ");
+				}
+				if(this.plateau[i][j] == '◇') {
+					System.out.print("\u001B[32m" + this.plateau[i][j] + "\u001B[0m ");
+				}
 			}
 			System.out.println();
 		}
 	}
+	
+//RESET = "\u001B[0m"
+//BLACK = "\u001B[30m"
+//RED = "\u001B[31m"
+//GREEN = "\u001B[32m"
+//YELLOW = "\u001B[33m"
+//BLUE = "\u001B[34m"
+//PURPLE = "\u001B[35m"
+//CYAN = "\u001B[36m"
+//WHITE = "\u001B[37m"
 
 	public void ajouteBateau(Joueur joueur) {
-		Util.clearScreen();
 		this.affichePlateau();
 		System.out.println("Sélectionnez un bateau a placer");
 		String lettre = "";
 		boolean lettreFind = false;
 		while (!lettreFind) {
-			System.out.println("a) ■ ■ ■ ■ ■   b) ■ ■ ■ ■   c) ■ ■ ■   d) ■ ■");
+			System.out.println("a) \u001B[33m■ ■ ■ ■ ■\u001B[0m   b) \u001B[33m■ ■ ■ ■\u001B[0m   c) \u001B[33m■ ■ ■\u001B[0m   d) \u001B[33m■ ■\u001B[0m");
 			lettre = Util.saisirChaine();
 			if (lettre.equals("a") || lettre.equals("b") || lettre.equals("c") || lettre.equals("d")) {
 				lettreFind = true;
@@ -141,6 +161,7 @@ public class Plateau {
 
 	public void ajoutFlotte(Joueur j) {
 		for(int i = 0; i < 1; i++) {
+			Util.clearScreen();
 			this.ajouteBateau(j);
 		}
 	}
@@ -159,6 +180,19 @@ public class Plateau {
 			}
 		}
 	}
+	
+	public boolean aPerduPlat() {
+		boolean fin = true;
+		for(int i = 0; i < taille; i ++) {
+			for(int j = 0; j < taille; j ++) {
+				if(this.plateau[i][j] == '■') {
+					fin = false;
+				}
+			}	
+		}
+		return fin;
+	}
+	
 	public static void modifPlateaux(Plateau p, Plateau q, Map<String, Boolean> map) {
 		p.modifPlateau(map);
 		q.modifPlateau(map);
