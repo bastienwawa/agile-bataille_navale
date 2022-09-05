@@ -19,8 +19,4 @@ public class Joueur {
 		this.bateaux.add(bateau);
 	}
 
-	@Override
-	public String toString() {
-		return "le nom du joueur est : " + this.nom;
-	}
 }
