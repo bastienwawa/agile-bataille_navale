@@ -18,6 +18,10 @@ public class Plateau {
 
 	// ■ □ ◈ ◇
 
+	public void setPlateau(char[][] plateau) {
+		this.plateau = plateau;
+	}
+	
 	public void affichePlateau() {
 		System.out.print("  ");
 		for (int l = 0; l < taille; l++) {
@@ -136,7 +140,7 @@ public class Plateau {
 	}
 
 	public void ajoutFlotte(Joueur j) {
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 1; i++) {
 			this.ajouteBateau(j);
 		}
 	}
@@ -146,10 +150,10 @@ public class Plateau {
 	public void modifPlateau(Map<String, Boolean> map) {
 		for (Map.Entry mapentry : map.entrySet()) {
 			System.out.println("clé: " + mapentry.getKey() + " | valeur: " + mapentry.getValue());
-			if (mapentry.getValue().equals("true")) {
+			if (mapentry.getValue().equals(true)) {
 				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString()
 						.charAt(0) - 97] = '◈';
-			} else if (mapentry.getValue().equals("false")) {
+			} else if (mapentry.getValue().equals(false)) {
 				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString()
 						.charAt(0) - 97] = '◇';
 			}

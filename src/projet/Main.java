@@ -27,15 +27,15 @@ public class Main {
 		if (getRound() == 0) {
 
 			while (!valid) {
-				entree = Util.saisirChaine().toUpperCase();
-				if (entree.equals("QUITTER") || entree.charAt(0) >= 'A' && entree.charAt(0) <= 'Z' && entree.charAt(1) >= '0' && entree.charAt(1) <= '9' && tirJ1.casesNonVerif.contains(entree)) {
-					valid = true;					
+				entree = Util.saisirChaine().toLowerCase();
+				if (entree.equals("quitter") || tirJ1.casesNonVerif.contains(entree)) {
+					valid = true;
 				}
 
 			}
-			// ===============Quitter partie===============//
+			// ===============quitter partie===============//
 
-			if (entree.equals("QUITTER")) {
+			if (entree.equals("quitter")) {
 				System.out.println(joueur.j2.getNom() + " a gagné par abandon");
 				System.exit(0);
 			}
@@ -51,17 +51,15 @@ public class Main {
 		} else {
 
 			while (!valid) {
-				entree = Util.saisirChaine().toUpperCase();
-				if (entree.equals("QUITTER") || entree.charAt(0) >= 'A' && entree.charAt(0) <= 'Z'
-						&& entree.charAt(1) >= '0' && entree.charAt(9) <= '9' && tirJ2.casesNonVerif.contains(entree)
-
-				)
+				entree = Util.saisirChaine().toLowerCase();
+				if (entree.equals("quitter") || tirJ2.casesNonVerif.contains(entree)) {
 					valid = true;
+				}
 
 			}
-			// ===============Quitter partie joueur 2 ===============//
+			// ===============quitter partie joueur 2 ===============//
 
-			if (entree.equals("QUITTER")) {
+			if (entree.equals("quitter")) {
 				System.out.println(joueur.j1.getNom() + " a gagné par abandon");
 				System.exit(0);
 			}
@@ -77,8 +75,6 @@ public class Main {
 
 	}
 
-	
-
 	public static void main(String[] args) {
 		Util.clearScreen();
 		joueur = new SelectionNbJoueur();
@@ -91,6 +87,7 @@ public class Main {
 		System.out.println("Au tour du Joueur 1 de placer ses bateaux");
 		if (joueur.j2.getNom().equals("IA")) {
 			p1.ajoutFlotte(joueur.j1);
+			((IA) joueur.j2).randBoat(p2);
 		} else {
 			p1.ajoutFlotte(joueur.j1);
 			Util.clearScreen();
@@ -104,6 +101,7 @@ public class Main {
 			if (joueur.j2.getNom().equals("IA")) {
 
 				if (getRound() == 0) {
+					Util.clearScreen();
 					// Affiche plateau
 					p1.affichePlateau();
 					p2visu.affichePlateau();
@@ -114,11 +112,10 @@ public class Main {
 					// affiche le nouveau plateau
 					tour++;
 				} else {
+					Util.clearScreen();
 					// Affiche plateau
-					p2.affichePlateau();
-					p1visu.affichePlateau();
 					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
-					entreeJoueur();
+					tirJ2.shootIA();
 					// Modifie le plateau
 					Plateau.modifPlateaux(p1, p1visu, tirJ2.tirEnreg);
 					// affiche le nouveau plateau
@@ -136,13 +133,25 @@ public class Main {
 			} else {
 
 				if (getRound() == 0) {
+					Util.clearScreen();
+					// Affiche plateau
+					p1.affichePlateau();
+					p2visu.affichePlateau();
+					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
 					entreeJoueur();
 					// Modifie le plateau
+					Plateau.modifPlateaux(p2, p2visu, tirJ1.tirEnreg);
 					// affiche le nouveau plateau
 					tour++;
 				} else {
+					Util.clearScreen();
+					// Affiche plateau
+					p2.affichePlateau();
+					p1visu.affichePlateau();
+					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
 					entreeJoueur();
 					// Modifie le plateau
+					Plateau.modifPlateaux(p1, p1visu, tirJ2.tirEnreg);
 					// affiche le nouveau plateau
 					tour++;
 				}

@@ -34,7 +34,23 @@ public class IA extends Joueur {
 		// (String rota, String coord, Bateau bat, Joueur joueur)
 		boolean place = false;
 		while(!place) {
-			place = Plateau.placeBateau(rota(), tir(), (new Bateau(5)), (Joueur)this);
+			place = IA.placeBateau(rota(), tir(), (new Bateau(5)), (Joueur)this);
+		}
+		place = false;
+		while(!place) {
+			place = IA.placeBateau(rota(), tir(), (new Bateau(4)), (Joueur)this);
+		}
+		place = false;
+		while(!place) {
+			place = IA.placeBateau(rota(), tir(), (new Bateau(3)), (Joueur)this);
+		}
+		place = false;
+		while(!place) {
+			place = IA.placeBateau(rota(), tir(), (new Bateau(3)), (Joueur)this);
+		}
+		place = false;
+		while(!place) {
+			place = IA.placeBateau(rota(), tir(), (new Bateau(2)), (Joueur)this);
 		}
 	}
 }

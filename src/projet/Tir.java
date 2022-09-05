@@ -41,7 +41,6 @@ public class Tir {
 				}else {
 					this.tirEnreg.put(donnees, false);
 				}
-				System.out.println(tirEnreg);
 				good = true;
 				System.out.println("Coordonnees rentrees");
 			}else {
@@ -65,8 +64,8 @@ public class Tir {
 	
 	public void shootIA(){
 		boolean good = false;
-		String donnees = tirIA();
 		while(!good) {
+			String donnees = tirIA();
 			if(!(donnees.length() == 2)) {
 				System.err.println("Ce n'est pas le bon nombre de caracteres");
 			}
