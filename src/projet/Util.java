@@ -8,7 +8,7 @@ public class Util {
 	public static String saisirChaine() {
         String nom;
         while(true){
-            nom = scannerClavier.nextLine();
+            nom = scannerClavier.nextLine().toUpperCase();
             if(nom.length()>0)
                 return nom;
         }

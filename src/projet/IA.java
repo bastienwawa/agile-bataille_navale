@@ -7,7 +7,7 @@ public class IA extends Joueur {
 
 	public ArrayList<Bateau> bateaux = new ArrayList<>();
 
-	public IA(String nom) {
+	public IA() {
 		super("IA");
 		// TODO Auto-generated constructor stub
 	}

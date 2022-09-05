@@ -7,7 +7,7 @@ public class Tir {
 	ArrayList<String> casesNonVerif = new ArrayList<String>();
 	ArrayList<String> casesBateaux = new ArrayList<String>();
 	
-	public Tir(Joueur joueur) {
+	public Tir() {
 		
 		//partie cases non vérif
 		for(int i = 97; i<107; i++) {
@@ -18,32 +18,15 @@ public class Tir {
 			}
 		}
 				
-		//partie casesBateaux
-		
-		for(Bateau enCours:joueur.bateaux) {
-			casesBateaux.addAll(enCours.getCoordonnees());
-		}
 		
 	}
-	
-//	public void bateauCoule() {
-//		switch(Main.getRound()) {
-//		case 1:
-//			for (String coord:j1.porteAvion)
-//			break;
-//		case 2:
-//			//joueur 2
-//			break;
-//		}
-//		
-//	}
 	
 	public boolean aPerdu() {
 		if (tirEnreg.keySet().contains(casesBateaux)) return true;
 		return false;
 	}
 	
-	public void getCoordinateFromPlayer() throws WrongCoordinateException, WrongInputLengthException{
+	public void shoot(){
 		boolean good = false;
 		String donnees;
 		while(!good) {
@@ -52,7 +35,7 @@ public class Tir {
 			donnees = coord.nextLine().toUpperCase();
 			coord.close();
 			if(!(donnees.length() == 2)) {
-				throw new WrongInputLengthException("Ce n'est pas le bon nombre de caracteres");
+				System.err.println("Ce n'est pas le bon nombre de caracteres");
 			}
 			if(this.casesNonVerif.contains(donnees)) {
 				this.casesNonVerif.remove(donnees);
@@ -64,10 +47,46 @@ public class Tir {
 				good = true;
 				System.out.println("Coordonnees rentrees");
 			}else {
-				throw new WrongCoordinateException("Ce n'est pas une coordonnees");
+				System.err.println("Ce n'est pas une coordonnees");
 			}
 		}
 	}
+	
+	public void placerBateaux(Joueur joueur) {
+		for(Bateau enCours:joueur.bateaux) {
+			casesBateaux.addAll(enCours.getCoordonnees());
+		}
+	}
+	
+	public String tirIA() {
+		Random random = new Random();
+		int nb = random.nextInt(10);
+		char x = (char) (nb + 97);
+		return "" + x + nb;
+	}
+	
+	public void shootIA(){
+		boolean good = false;
+		String donnees = tirIA();
+		while(!good) {
+			if(!(donnees.length() == 2)) {
+				System.err.println("Ce n'est pas le bon nombre de caracteres");
+			}
+			if(this.casesNonVerif.contains(donnees)) {
+				this.casesNonVerif.remove(donnees);
+				if(this.casesBateaux.contains(donnees)) {
+					this.tirEnreg.put(donnees, true);
+				}else {
+					this.tirEnreg.put(donnees, false);
+				}
+				good = true;
+				System.out.println("Coordonnees rentrees");
+			}else {
+				System.err.println("Ce n'est pas une coordonnees");
+			}
+		}
+	}
+	
 }
 
 
