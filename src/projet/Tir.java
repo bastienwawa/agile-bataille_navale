@@ -9,7 +9,7 @@ public class Tir {
 	
 	public Tir() {
 		
-		//partie cases non vérif
+		//partie cases non vï¿½rif
 		for(int i = 97; i<107; i++) {
 			for(int nb = 0; nb<10; nb++) {
 				String rep = "" + (char) i + nb;
@@ -26,14 +26,9 @@ public class Tir {
 		return false;
 	}
 	
-	public void shoot(){
+	public void shoot(String donnees){
 		boolean good = false;
-		String donnees;
 		while(!good) {
-			Scanner coord = new Scanner(System.in);
-			System.out.print("Entrer vos coordonnees:");
-			donnees = coord.nextLine().toUpperCase();
-			coord.close();
 			if(!(donnees.length() == 2)) {
 				System.err.println("Ce n'est pas le bon nombre de caracteres");
 			}
