@@ -211,7 +211,7 @@ _______________________________
 - Jar exécutable
 
 ### Prévu
-- Possiblement sauvegarde/charge de parties
+
 
 ## Rétrospective
 
