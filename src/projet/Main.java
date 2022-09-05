@@ -114,7 +114,7 @@ public class Main {
 					System.out.println("Plateau de " + joueur.j2.getNom() +" visuel");
 					p2visu.affichePlateau();
 					System.out.println("Au tour de " + joueur.j1.getNom());
-					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner");
+					System.out.println("Entrez des coordonnées pour tirer (ou \"quitter\" pour abandonner)");
 					entreeJoueur();
 					// Modifie le plateau
 					Plateau.modifPlateaux(p2, p2visu, tirJ1.tirEnreg);

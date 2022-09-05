@@ -48,7 +48,7 @@ public class Plateau {
 		}
 	}
 	
-//RESET = "\u001B[0m"
+//RESET = "\u001B[33m\u001B[0m"
 //BLACK = "\u001B[30m"
 //RED = "\u001B[31m"
 //GREEN = "\u001B[32m"
@@ -160,7 +160,7 @@ public class Plateau {
 	}
 
 	public void ajoutFlotte(Joueur j) {
-		for(int i = 0; i < 1; i++) {
+		for(int i = 0; i < 5; i++) {
 			Util.clearScreen();
 			this.ajouteBateau(j);
 		}
