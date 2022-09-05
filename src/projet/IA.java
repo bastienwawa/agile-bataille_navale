@@ -19,4 +19,22 @@ public class IA extends Joueur {
 		return "" + x + nb;
 	}
 
+	public String rota() {
+		Random rand = new Random();
+		int nb = rand.nextInt(2);
+		if(nb == 0) {
+			return "v";
+		}
+		return "h";
+	}
+	
+	
+	
+	public void randBoat(Plateau IA) {
+		// (String rota, String coord, Bateau bat, Joueur joueur)
+		boolean place = false;
+		while(!place) {
+			place = Plateau.placeBateau(rota(), tir(), (new Bateau(5)), (Joueur)this);
+		}
+	}
 }

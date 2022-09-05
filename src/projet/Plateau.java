@@ -74,7 +74,7 @@ public class Plateau {
 		}
 	}
 
-	public boolean placeBateau(String rota, String coord, Bateau bat, Joueur joueur) {
+	public static boolean placeBateau(String rota, String coord, Bateau bat, Joueur joueur) {
 		boolean end = false;
 		if (rota.equals("h")) {
 			for (char e : bat.hori) {
