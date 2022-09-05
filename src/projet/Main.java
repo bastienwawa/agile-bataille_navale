@@ -100,6 +100,8 @@ public class Main {
 		 joueur = new SelectionNbJoueur();
 		 //initialiser la partie et les bateaux
 		 boolean fin = false;
+		 tirJ1.placerBateaux(joueur.j2);
+		 tirJ2.placerBateaux(joueur.j1);
 		 while(!fin) {
 			 if(joueur.j2.getNom().equals("IA")) {
 
