@@ -53,6 +53,10 @@ public class Main {
 			//=============== Tirer ===============//
 			
 			tirJ1.shoot(entree);
+			if(tirJ1.casesBateaux.contains(entree)) {
+				System.out.println("touche");
+				tour --;
+			}
 			
 		} else {
 			
@@ -80,6 +84,10 @@ public class Main {
 			//=============== Tirer joueur 2 ===============//
 			
 			tirJ2.shoot(entree);
+			if(tirJ2.casesBateaux.contains(entree)) {
+				System.out.println("touche");
+				tour --;
+			}
 		}
 		
 		
@@ -94,11 +102,19 @@ public class Main {
 		 boolean fin = false;
 		 while(!fin) {
 			 if(joueur.j2.getNom().equals("IA")) {
-				entreeJoueur();
-				//modif du plateau;
-				tirJ2.shootIA();
-				//modif du plateau;
-				tour ++;
+
+				 if(getRound() == 0 ) {
+					 entreeJoueur();
+					 //Modifie le plateau
+					 //affiche le nouveau plateau
+					 tour ++;
+				 }else {
+					 entreeJoueur();
+					 //Modifie le plateau
+					 //affiche le nouveau plateau
+					 tour ++;
+				 }
+				 
 				if(tirJ1.aPerdu()) {
 					fin = true;
 					System.out.println("Victoire de l'IA");
@@ -110,11 +126,18 @@ public class Main {
 			 }
 			 else {
 				 
-				 	entreeJoueur();
-					//modif du plateau;
-					entreeJoueur();
-					//modif du plateau;
-					tour ++;
+				 if(getRound() == 0 ) {
+					 entreeJoueur();
+					 //Modifie le plateau
+					 //affiche le nouveau plateau
+					 tour ++;
+				 }else {
+					 entreeJoueur();
+					 //Modifie le plateau
+					 //affiche le nouveau plateau
+					 tour ++;
+				 }
+				 
 					if(tirJ1.aPerdu()) {
 						fin = true;
 						System.out.println("Victoire de " + joueur.j2.getNom());
