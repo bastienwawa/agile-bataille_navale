@@ -34,6 +34,8 @@ public class Plateau {
 	}
 
 	public void ajouteBateau(Joueur joueur) {
+		Util.clearScreen();
+		this.affichePlateau();
 		System.out.println("Sélectionnez un bateau a placer");
 		String lettre = "";
 		boolean lettreFind = false;
@@ -65,84 +67,96 @@ public class Plateau {
 		}
 		boolean end = false;
 
-		System.out.println("Entrez une coordonnée : (exemple : \"a1\" ou \"b5\"");
+		System.out.println("Entrez une coordonnée : (exemple : \"a1\" ou \"b5\")");
 		while (!end) {
 			String coord = Util.saisirChaine();
-			end = placeBateau(rota,coord,bat,joueur);
+			end = placeBateau(rota, coord, bat, joueur);
 		}
 	}
-		
-		public boolean placeBateau(String rota, String coord, Bateau bat, Joueur joueur) {
-			boolean end = false;
-			if (rota.equals("h")) {
-				for (char e : bat.hori) {
-					String e2 = "" + e;
-					if (e2.equals((coord.substring(0, 1)))) {
-						int e3 = (int) (e - 97);
-						boolean superpos = false;
-						for (int i = 0; i < bat.taille; i++) {
-							String coo = "" + (char) (coord.charAt(0) + i) + Integer.parseInt(coord.substring(1));
-							for (Bateau bateau : joueur.bateaux) {
-								for (String coordo : bateau.coordonnees) {
-									if (coo.equals(coordo)) {
-										superpos = true;
-									}
+
+	public boolean placeBateau(String rota, String coord, Bateau bat, Joueur joueur) {
+		boolean end = false;
+		if (rota.equals("h")) {
+			for (char e : bat.hori) {
+				String e2 = "" + e;
+				if (e2.equals((coord.substring(0, 1)))) {
+					int e3 = (int) (e - 97);
+					boolean superpos = false;
+					for (int i = 0; i < bat.taille; i++) {
+						String coo = "" + (char) (coord.charAt(0) + i) + Integer.parseInt(coord.substring(1));
+						for (Bateau bateau : joueur.bateaux) {
+							for (String coordo : bateau.coordonnees) {
+								if (coo.equals(coordo)) {
+									superpos = true;
 								}
 							}
-						}
-						if (superpos == false) {
-							for (int i = 0; i < bat.taille; i++) {
-								this.plateau[Integer.parseInt(coord.substring(1))][e3 + i] = '■';
-								end = true;
-							}
-							bat.setCoordonnees(coord, rota.charAt(0));
-							joueur.addBateau(bat);
-						} else {
-							System.out.println("Mauvais emplacement, choisissez une nouvelle position");
 						}
 					}
-				}
-			} else if (rota.equals("v")) {
-				for (int e : bat.verti) {
-					if (e == Integer.parseInt(coord.substring(1))) {
-						int e3 = coord.charAt(0) - 97;
-						boolean superpos = false;
+					if (superpos == false) {
 						for (int i = 0; i < bat.taille; i++) {
-							String coo = "" + coord.substring(0, 1) + (Integer.parseInt(coord.substring(1)) + i);
-							for (Bateau bateau : joueur.bateaux) {
-								for (String coordo : bateau.coordonnees) {
-									if (coo.equals(coordo)) {
-										superpos = true;
-									}
-								}
-							}
+							this.plateau[Integer.parseInt(coord.substring(1))][e3 + i] = '■';
+							end = true;
 						}
-						if (superpos == false) {
-							for (int i = 0; i < bat.taille; i++) {
-								this.plateau[Integer.parseInt(coord.substring(1)) + i][e3] = '■';
-								end = true;
-							}
-							bat.setCoordonnees(coord, rota.charAt(0));
-							joueur.addBateau(bat);
-						} else {
-							System.out.println("Mauvais emplacement, choisissez une nouvelle position");
-						}
+						bat.setCoordonnees(coord, rota.charAt(0));
+						joueur.addBateau(bat);
+					} else {
+						System.out.println("Mauvais emplacement, choisissez une nouvelle position");
 					}
 				}
 			}
-			return end;
+		} else if (rota.equals("v")) {
+			for (int e : bat.verti) {
+				if (e == Integer.parseInt(coord.substring(1))) {
+					int e3 = coord.charAt(0) - 97;
+					boolean superpos = false;
+					for (int i = 0; i < bat.taille; i++) {
+						String coo = "" + coord.substring(0, 1) + (Integer.parseInt(coord.substring(1)) + i);
+						for (Bateau bateau : joueur.bateaux) {
+							for (String coordo : bateau.coordonnees) {
+								if (coo.equals(coordo)) {
+									superpos = true;
+								}
+							}
+						}
+					}
+					if (superpos == false) {
+						for (int i = 0; i < bat.taille; i++) {
+							this.plateau[Integer.parseInt(coord.substring(1)) + i][e3] = '■';
+							end = true;
+						}
+						bat.setCoordonnees(coord, rota.charAt(0));
+						joueur.addBateau(bat);
+					} else {
+						System.out.println("Mauvais emplacement, choisissez une nouvelle position");
+					}
+				}
+			}
+		}
+		return end;
 	}
+
+	public void ajoutFlotte(Joueur j) {
+		for(int i = 0; i < 5; i++) {
+			this.ajouteBateau(j);
+		}
+	}
+	
 	// ■ □ ◈ ◇
 
 	public void modifPlateau(Map<String, Boolean> map) {
 		for (Map.Entry mapentry : map.entrySet()) {
 			System.out.println("clé: " + mapentry.getKey() + " | valeur: " + mapentry.getValue());
-			if(mapentry.getValue().equals("true")) {
-				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString().charAt(0) - 97] = '◈';				
-			} else if(mapentry.getValue().equals("false")) {
-				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString().charAt(0) - 97] = '◇';				
+			if (mapentry.getValue().equals("true")) {
+				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString()
+						.charAt(0) - 97] = '◈';
+			} else if (mapentry.getValue().equals("false")) {
+				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString()
+						.charAt(0) - 97] = '◇';
 			}
 		}
 	}
-
+	public static void modifPlateaux(Plateau p, Plateau q, Map<String, Boolean> map) {
+		p.modifPlateau(map);
+		q.modifPlateau(map);
+	}
 }

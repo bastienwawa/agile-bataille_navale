@@ -28,6 +28,7 @@ public class SelectionNbJoueur {
 			System.out.println("\n1 joueur selectionnée");
 			System.out.println("\nJOUEUR 1 : Entrez votre nom");
 			getJ1();
+			j2 = new IA();
 
 		}
 

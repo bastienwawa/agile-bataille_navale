@@ -26,6 +26,8 @@ public class Tir {
 		return false;
 	}
 	
+	
+	
 	public void shoot(String donnees){
 		boolean good = false;
 		while(!good) {
@@ -39,6 +41,7 @@ public class Tir {
 				}else {
 					this.tirEnreg.put(donnees, false);
 				}
+				System.out.println(tirEnreg);
 				good = true;
 				System.out.println("Coordonnees rentrees");
 			}else {
