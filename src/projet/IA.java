@@ -3,21 +3,13 @@ package projet;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class IA {
-	private final String nom = "Ordinateur";
+public class IA extends Joueur {
+
 	public ArrayList<Bateau> bateaux = new ArrayList<>();
 
-	public String getNom() {
-		return nom;
-	}
-
-	public void addBateau(Bateau bateau) {
-		this.bateaux.add(bateau);
-	}
-
-	@Override
-	public String toString() {
-		return "Vous jouez contre l'" + this.nom;
+	public IA(String nom) {
+		super("IA");
+		// TODO Auto-generated constructor stub
 	}
 
 	public String tir() {
