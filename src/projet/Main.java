@@ -25,34 +25,62 @@ public class Main {
 	public static void entreeJoueur() {
 		boolean valid = false;
 		String entree = "";
-		while(!valid) {
-			entree = Util.saisirChaine();
-			if(
-					entree.equals("quitter") &&
-					entree.charAt(0) >= 'A' &&
-					entree.charAt(0) <= 'Z' &&
-					entree.charAt(1) >= '0' &&
-					entree.charAt(9) <= '9' 
-					
-					) {
-				valid = true;
-			}
+		
+		if(getRound() == 0) {
+			
+			
+			while(!valid) {
+				entree = Util.saisirChaine().toUpperCase();
+				if(
+						entree.equals("QUITTER") &&
+						entree.charAt(0) >= 'A' &&
+						entree.charAt(0) <= 'Z' &&
+						entree.charAt(1) >= '0' &&
+						entree.charAt(9) <= '9' &&
+						tirJ1.casesNonVerif.contains(entree)
+						
+						) valid = true;
 				
+				
+			}
+			//===============Quitter partie===============//
+			
+			if(entree.equals("QUITTER")) {
+				System.out.println(joueur.j2.getNom() + " a gagné par abandon");
+				System.exit(0);
+			}
+			
+			//=============== Tirer ===============//
+			
+			tirJ1.shoot(entree);
+			
+		} else {
+			
+			while(!valid) {
+				entree = Util.saisirChaine().toUpperCase();
+				if(
+						entree.equals("QUITTER") &&
+						entree.charAt(0) >= 'A' &&
+						entree.charAt(0) <= 'Z' &&
+						entree.charAt(1) >= '0' &&
+						entree.charAt(9) <= '9' &&
+						tirJ2.casesNonVerif.contains(entree)
+						
+						) valid = true;
+				
+				
+			}
+			//===============Quitter partie joueur 2 ===============//
+			
+			if(entree.equals("QUITTER")) {
+				System.out.println(joueur.j1.getNom() + " a gagné par abandon");
+				System.exit(0);
+			}
+			
+			//=============== Tirer joueur 2 ===============//
+			
+			tirJ2.shoot(entree);
 		}
-		//===============Quitter partie===============//
-		
-		if(getRound() == 0 && entree.equals("quitter")) {
-			System.out.println(joueur.j2.getNom() + " a gagné par abandon");
-			System.exit(0);
-		}else if(getRound() == 1 && entree.equals("quitter")) {
-			System.out.println(joueur.j2.getNom() + " a gagné par abandon");
-			System.exit(0);
-		}
-		
-		//=============== Tirer ===============//
-	
-		if(getRound() == 0) tirJ1.shoot(entree);
-		if(getRound() == 1) tirJ2.shoot(entree);
 		
 		
 		
