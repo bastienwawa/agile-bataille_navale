@@ -1,5 +1,7 @@
 package projet;
 
+import java.util.Map;
+
 public class Plateau {
 	private static int taille = 10;
 	private char[][] plateau;
@@ -42,12 +44,12 @@ public class Plateau {
 				lettreFind = true;
 			}
 		}
-		String rep = "";
+		String rota = "";
 		boolean rotation = false;
 		while (!rotation) {
 			System.out.println("Bateau à l'horizontale ou vérticale ? (h ou v)");
-			rep = Util.saisirChaine();
-			if (rep.equals("h") || rep.equals("v")) {
+			rota = Util.saisirChaine();
+			if (rota.equals("h") || rota.equals("v")) {
 				rotation = true;
 			}
 		}
@@ -62,11 +64,17 @@ public class Plateau {
 			bat = new Bateau(2);
 		}
 		boolean end = false;
-	
+
 		System.out.println("Entrez une coordonnée : (exemple : \"a1\" ou \"b5\"");
 		while (!end) {
 			String coord = Util.saisirChaine();
-			if (rep.equals("h")) {
+			end = placeBateau(rota,coord,bat,joueur);
+		}
+	}
+		
+		public boolean placeBateau(String rota, String coord, Bateau bat, Joueur joueur) {
+			boolean end = false;
+			if (rota.equals("h")) {
 				for (char e : bat.hori) {
 					String e2 = "" + e;
 					if (e2.equals((coord.substring(0, 1)))) {
@@ -87,14 +95,14 @@ public class Plateau {
 								this.plateau[Integer.parseInt(coord.substring(1))][e3 + i] = '■';
 								end = true;
 							}
-							bat.setCoordonnees(coord, rep.charAt(0));
+							bat.setCoordonnees(coord, rota.charAt(0));
 							joueur.addBateau(bat);
 						} else {
 							System.out.println("Mauvais emplacement, choisissez une nouvelle position");
 						}
 					}
 				}
-			} else if (rep.equals("v")) {
+			} else if (rota.equals("v")) {
 				for (int e : bat.verti) {
 					if (e == Integer.parseInt(coord.substring(1))) {
 						int e3 = coord.charAt(0) - 97;
@@ -114,7 +122,7 @@ public class Plateau {
 								this.plateau[Integer.parseInt(coord.substring(1)) + i][e3] = '■';
 								end = true;
 							}
-							bat.setCoordonnees(coord, rep.charAt(0));
+							bat.setCoordonnees(coord, rota.charAt(0));
 							joueur.addBateau(bat);
 						} else {
 							System.out.println("Mauvais emplacement, choisissez une nouvelle position");
@@ -122,6 +130,19 @@ public class Plateau {
 					}
 				}
 			}
+			return end;
+	}
+	// ■ □ ◈ ◇
+
+	public void modifPlateau(Map<String, Boolean> map) {
+		for (Map.Entry mapentry : map.entrySet()) {
+			System.out.println("clé: " + mapentry.getKey() + " | valeur: " + mapentry.getValue());
+			if(mapentry.getValue().equals("true")) {
+				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString().charAt(0) - 97] = '◈';				
+			} else if(mapentry.getValue().equals("false")) {
+				plateau[Integer.parseInt(mapentry.getKey().toString().substring(1))][mapentry.getKey().toString().charAt(0) - 97] = '◇';				
+			}
 		}
 	}
+
 }
