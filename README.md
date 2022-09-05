@@ -123,5 +123,106 @@ _______________________________
 * Notre temps et coopération est notre priorité, ils faudrait le plus possible diviser une tâche afin d'avoir un certain nombre se retrouvent à travailler dûs la particularité de notre projet certaines tâches demandaient priorités et d'autres ne pouvez être Accomplis tant que ces dernières ne soient remplis, ce qui fait qu'ils y avaient certains d'entre nous sans rien à faire à part servir de conseiller et d'appui
 * Communiquer pour trouver divers solutions au problème que nous façons
 
+_______________________________
+
+
+# Sprint 6
+
+## Démo + Plannification
+
+### Les Accomplis
+- La non superposition des bateaux
+- Révisionnement de la position bateaux et celui des tirs
+
+### Prévu
+- Terminer l'ia, pour le mode 1J
+- Marquer les touches sur le plateau
+
+## Rétrospective
+
+### Difficultés
+* GIT
+
+### PDCA
+* Faire très attention à notre utilisation de git et échanger entre nous, afin d'assurer que nous pouvons l'utiliser sans risques
+
+_______________________________
+
+
+# Sprint 7
+
+## Démo + Plannification
+
+### Les Accomplis
+- Indiquer un tour
+- Quitter la partie
+- Officialisation de placement bateau
+- Marquer les touches sur plateau
+
+### Prévu
+- Placement des bateaux de l'ia de manière aléatoire
+- Conclure définitivement position tir
+- Visualisation du plateau adverse
+
+## Rétrospective
+
+### Difficultés
+* Git
+* Placement aléatoire des bateaux à appliquer
+
+### PDCA
+* Désormais que le projet est dans sa dernière phase, les tâches sont plus faciles à repartir, tandis que d'autres peuvent se réunir sur les mêmes afin de travailler plus vite
+
+_______________________________
+
+
+# Sprint 8
+
+## Démo + Plannification
+
+### Les Accomplis
+- Placement des bateaux de l'IA
+- Marquages des touches
+- Faire un tir
+- Possibilité de rejouer si touché
+- Visualiser les plateaux (le sien, qui as les bateaux que possèdent le joueur, et celui de l'adversaire qui reste à découvrir)
+
+### Prévu
+- Couleurs
+- Jar exécutable
+
+## Rétrospective
+
+### Difficultés
+* Relier toutes les parties de codes entre eux, dans le Main final 
+
+### PDCA
+* Nous avons procèder étape par étape, on prenans notre temps, et avons décortiquer nos fonctions afin de ne pas les mélanger par erreur
+
+_______________________________
+
+
+# Sprint 9
+
+## Démo + Plannification
+
+### Les Accomplis
+- Couleurs dans le jeu
+- Jar exécutable
+
+### Prévu
+- Possiblement sauvegarde/charge de parties
+
+## Rétrospective
+
+### Difficultés
+* Complication avec l'ia, qui redemendait une case déjà vérifié
+* Exporter et utiliser le jar exécutable
+
+### PDCA
+Notre projet est finalement conclu, désormais nous avons entrepis des travaux supplémentaires afin de l'améliorer tel que rajouter de la couleur pour la mise en forme de notre jeu
+
 # Tentative de Slogan
 * Combat Maritime, la bataille menés par les vrais amiraux
+* Coulé ou gagné, seuls les vrais marins survivront
+* Au boulot marins, mené votre navire à la victoire
