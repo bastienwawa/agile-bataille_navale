@@ -25,14 +25,14 @@ public class SelectionNbJoueur {
 	public void nbJoueur(String choix) throws EntreeInvalide {
 
 		if (choix.equals("1")) {
-			System.out.println("\n1 joueur selectionnée");
+			System.out.println("\n1 joueur selectionnÃ©e");
 			System.out.println("\nJOUEUR 1 : Entrez votre nom");
 			getJ1();
 
 		}
 
 		else if (choix.equals("2")) {
-			System.out.println("\n2 joueurs selectionnées");
+			System.out.println("\n2 joueurs selectionnÃ©es");
 			System.out.println("\nJOUEUR 1 : Entrez votre nom");
 			getJ1();
 			System.out.println("\nJOUEUR 2 : Entrez votre nom");
