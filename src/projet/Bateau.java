@@ -33,13 +33,11 @@ public class Bateau {
 			}
 		} else if (this.rotation == 'v') {
 			for (int i = 0; i < taille; i++) {
-				String c = "" + (char)(coord.charAt(0)) + (coord.charAt(1) + i);
+				String c = "" + (char)(coord.charAt(0)) + ((int)coord.charAt(1) + i - 48);
 				this.coordonnees.add(c);
 			}
-			System.out.println(this.coordonnees);
 		}
-//		
-//		System.out.println(this.coordonnees);
+		this.coordonnees.remove(0);
 		
 	}
 

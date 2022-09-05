@@ -31,7 +31,7 @@ public class Plateau {
 		}
 	}
 
-	public void ajouteBateau() {
+	public void ajouteBateau(Joueur joueur) {
 		System.out.println("Sélectionnez un bateau a placer");
 		String lettre = "";
 		boolean lettreFind = false;
@@ -71,10 +71,10 @@ public class Plateau {
 						int e3 = (int) (e - 97);
 						for (int i = 0; i < bat.taille; i++) {
 							this.plateau[Integer.parseInt(coord.substring(1))][e3 + i] = '■';
-							bat.setCoordonnees(coord, rep.charAt(0));
-//							joueur.addBateau(bat);
 							end = true;
 						}
+						bat.setCoordonnees(coord, rep.charAt(0));
+						joueur.addBateau(bat);
 					}
 				}
 			} else if (rep.equals("v")) {
@@ -83,10 +83,10 @@ public class Plateau {
 						int e3 = coord.charAt(0)-97;
 						for (int i = 0; i < bat.taille; i++) {
 							this.plateau[Integer.parseInt(coord.substring(1)) + i][e3] = '■';
-							bat.setCoordonnees(coord, rep.charAt(0));
-//							joueur.addBateau(bat);
 							end = true;
 						}
+						bat.setCoordonnees(coord, rep.charAt(0));
+						joueur.addBateau(bat);
 					}
 				}
 			}
