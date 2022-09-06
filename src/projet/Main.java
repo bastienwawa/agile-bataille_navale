@@ -75,7 +75,7 @@ public class Main {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Util.clearScreen();
 		Util.title();
 		System.out.println();
@@ -145,6 +145,10 @@ public class Main {
 
 				if (getRound() == 0) {
 					Util.clearScreen();
+					System.out.println();
+					System.out.println("Au tour de " + joueur.j1.getNom());
+					Thread.sleep(2000);
+					Util.clearScreen();
 					// Affiche plateau
 					System.out.println("Plateau de " + joueur.j1.getNom());
 					p1.affichePlateau();
@@ -159,6 +163,10 @@ public class Main {
 					// affiche le nouveau plateau
 					tour++;
 				} else {
+					Util.clearScreen();
+					System.out.println();
+					System.out.println("Au tour de " + joueur.j2.getNom());
+					Thread.sleep(2000);
 					Util.clearScreen();
 					// Affiche plateau
 					System.out.println("Plateau de " + joueur.j2.getNom());
